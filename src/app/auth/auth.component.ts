@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { AuthService, AuthResponseData } from './auth.service';
 import { AlertComponent } from '../shared/alert/alert.component';
 import { PlaceholderDirective } from '../shared/placeholder/placeholder.directive';
+import { RecipeService } from '../recipes/recipe.service';
 
 @Component({
     selector: 'app-auth',
@@ -21,7 +22,8 @@ export class AuthComponent {
     constructor(
         private authService: AuthService, 
         private router: Router,
-        private componentFactoryResolver: ComponentFactoryResolver) { }
+        private componentFactoryResolver: ComponentFactoryResolver,
+        private recipeService: RecipeService) { }
 
     onSwitchMode() {
         this.isLoginMode = !this.isLoginMode;
